@@ -1,9 +1,4 @@
 {
-  "builds": [
-    {
-      "src": "src/index.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "outputDirectory": "public"
+  "version": 2,
+  "rewrites": [{ "source": "/(.*)", "destination": "/src" }]
 }
