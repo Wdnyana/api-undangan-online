@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 import { CommentService } from "../service/commentService";
 
 export class CommentController {
@@ -8,7 +8,7 @@ export class CommentController {
     this.commentService = new CommentService();
   }
 
-  addComment = async (req: Request, res: Response, next: NextFunction) => {
+  addComment = async (req: Request, res: Response) => {
     try {
       const { nama, comment } = req.body;
 
@@ -19,16 +19,16 @@ export class CommentController {
 
       res.status(201).json(newComment);
     } catch (error) {
-      next(error);
+      console.error("Kesalahan saat mengambil data comment:", error);
     }
   };
 
-  getAlllsComment = async (req: Request, res: Response, next: NextFunction) => {
+  getAlllsComment = async (res: Response) => {
     try {
       const comments = await this.commentService.getAllComments();
       res.status(200).json(comments);
     } catch (error) {
-      next(error);
+      console.error("Kesalahan saat mengambil data comment:", error);
     }
   };
 }

@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 import { UserService } from "../service/userServices";
 import { CreateUserTypes } from "type/type";
 
@@ -9,7 +9,7 @@ export class UserController {
     this.userService = new UserService();
   }
 
-  createUser = async (req: Request, res: Response, next: NextFunction) => {
+  createUser = async (req: Request, res: Response) => {
     try {
       const { nama, password }: CreateUserTypes = req.body;
 
@@ -20,7 +20,7 @@ export class UserController {
         user: newUser,
       });
     } catch (error) {
-      next(error);
+      console.error("Kesalahan saat membuat user baru:", error);
     }
   };
 }

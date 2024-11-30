@@ -2,11 +2,12 @@ import { Request, Response } from "express";
 import { setCookie } from "nookies";
 
 import { LoginService } from "../service/login";
+import { LoginTypes } from "type/type";
 
 const loginService = new LoginService();
 
 class LoginController {
-  LoginUser = async (req: Request, res: Response) => {
+  LoginUser = async (req: Request<{}, {}, LoginTypes>, res: Response) => {
     if (!req.body || typeof req.body !== "object") {
       return res.status(400).json({ message: "Body request tidak valid" });
     }

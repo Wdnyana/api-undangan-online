@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction } from "express";
+import express, { Request, Response } from "express";
 import { UndanganController } from "../controller/welcome";
 import { LoginUndanganController } from "../controller/login";
 import { CommentsController } from "../controller/commentController";
@@ -17,33 +17,27 @@ router.post("/login", (req: Request, res: Response) => {
   console.log("Login");
 });
 
-router.post("/comment", (req: Request, res: Response, next: NextFunction) => {
-  CommentsController.addComment(req, res, next);
+router.post("/comment", (req: Request, res: Response) => {
+  CommentsController.addComment(req, res);
   console.log("comment created");
 });
 
-router.get("/comments", (req: Request, res: Response, next: NextFunction) => {
-  CommentsController.getAlllsComment(req, res, next);
+router.get("/comments", (req: Request, res: Response) => {
+  CommentsController.getAlllsComment(res);
   console.log("comment display");
 });
 
-router.post("/user", (req: Request, res: Response, next: NextFunction) => {
-  UsersController.createUser(req, res, next);
+router.post("/user", (req: Request, res: Response) => {
+  UsersController.createUser(req, res);
   console.log("user created");
 });
 
-router.post(
-  "/nama-undangan",
-  (req: Request, res: Response, next: NextFunction) => {
-    UndangansController.createUndangan(req, res, next);
-    console.log("undangan created");
-  }
-);
+router.post("/nama-undangan", (req: Request, res: Response) => {
+  UndangansController.createUndangan(req, res);
+  console.log("undangan created");
+});
 
-router.get(
-  "/nama-undangans",
-  (req: Request, res: Response, next: NextFunction) => {
-    UndangansController.getAllUndangans(req, res, next);
-    console.log("undangan created");
-  }
-);
+router.get("/nama-undangans", (res: Response) => {
+  UndangansController.getAllUndangans(res);
+  console.log("undangan created");
+});
