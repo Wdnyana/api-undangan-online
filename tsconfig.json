@@ -3,14 +3,16 @@
     "target": "es2016",
     "types": ["node", "express"],
     "module": "commonjs",
-    "outDir": "./dist",
+    "outDir": "build",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
       "*": ["*"]
     }
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*"]
 }

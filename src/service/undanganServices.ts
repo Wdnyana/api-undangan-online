@@ -1,6 +1,6 @@
 import prisma from "../../prisma/index";
 
-import { CreateUndanganTypes } from "type/type";
+import { CreateUndanganTypes } from "../type/type";
 
 export class UndanganService {
   async createUndangan(data: CreateUndanganTypes) {

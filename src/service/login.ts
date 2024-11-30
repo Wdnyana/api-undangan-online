@@ -1,5 +1,3 @@
-import { Request, Response } from "express";
-import { setCookie } from "nookies";
 import jwt from "jsonwebtoken";
 
 import { PrismaClient } from "@prisma/client";

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UndanganService } from "../service/undanganServices";
-import { CreateUndanganTypes } from "type/type";
+import { CreateUndanganTypes } from "../type/type";
 
 export class UndanganController {
   private undanganService: UndanganService;

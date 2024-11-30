@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { setCookie } from "nookies";
 
 import { LoginService } from "../service/login";
-import { LoginTypes } from "type/type";
+import { LoginTypes } from "../type/type";
 
 const loginService = new LoginService();
 
