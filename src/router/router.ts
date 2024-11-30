@@ -1,16 +1,11 @@
 import express, { Request, Response } from "express";
-import { UndanganController } from "../controller/welcome";
+
 import { LoginUndanganController } from "../controller/login";
 import { CommentsController } from "../controller/commentController";
 import { UsersController } from "../controller/userController";
 import { UndangansController } from "../controller/undanganController";
 
 export const router = express.Router();
-
-router.get("/welcome", (req: Request, res: Response) => {
-  console.log("Router triggered!");
-  UndanganController.welcomeMessage(req, res);
-});
 
 router.post("/login", (req: Request, res: Response) => {
   LoginUndanganController.LoginUser(req, res);

@@ -7,4 +7,4 @@ class postUndanganController {
   };
 }
 
-export const UndanganController = new postUndanganController();
+export const WelcomeController = new postUndanganController();
