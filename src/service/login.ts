@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 import { PrismaClient } from "@prisma/client";
 import { LoginTypes } from "../type/type";
-const prisma = new PrismaClient();
+import prisma from "../prisma";
 
 export class LoginService {
   async LoginUser(payload: LoginTypes) {

@@ -1,4 +1,4 @@
-import prisma from "../../prisma/index";
+import prisma from "../prisma";
 import { CommentTypes, CommentsTypes } from "../type/type";
 
 export class CommentService {

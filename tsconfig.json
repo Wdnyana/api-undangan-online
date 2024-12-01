@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es6",
     "types": ["node", "express"],
-    "module": "commonjs",
-    "outDir": "build",
+    "module": "CommonJS",
+    "outDir": "dist",
+    "rootDir": "src",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,

@@ -1,4 +1,4 @@
-import prisma from "../../prisma/index";
+import prisma from "../prisma";
 import { CreateUserTypes } from "../type/type";
 
 export class UserService {
